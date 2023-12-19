@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notiz App</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="notes-app">
@@ -23,30 +22,18 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-
-          Neue Notiz erstellen
+            /></svg
+          ><span>Neue Notiz erstellen</span>
         </button>
-        <div class="notes-list">
-          <div class="note-entry">
-            <div class="note-title">Notiz 1</div>
-            <div class="note-teaser">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi sit
-              fugiat incidunt facilis, rem corrupti perspiciatis quisquam
-              inventore dolorum. Aspernatur, sunt inventore cumque sit iure
-              quam. Autem iste molestiae laboriosam.
-            </div>
-            <div class="note-date">12.11.2023 18:58</div>
-          </div>
-        </div>
+        <div class="notes-list"></div>
       </div>
       <div class="main-content">
-        <div class="title-and-actions">
+        <span id="note-id-store"></span>
+        <div class="title-and-save">
           <input
             type="text"
             id="title-input"
-            placeholder="Überschrift eingeben"
+            placeholder="Überschrift eingeben..."
           />
           <button class="save-note">
             <svg
@@ -60,7 +47,7 @@
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25"
               />
             </svg>
           </button>
@@ -81,8 +68,13 @@
             </svg>
           </button>
         </div>
-        <textarea id="content-input">Schreibe eine Notiz</textarea>
+        <textarea
+          id="content-input"
+          placeholder="Fang' an eine Notiz zu erstellen"
+        ></textarea>
       </div>
     </div>
+    <script src="notesApi.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
